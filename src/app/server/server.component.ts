@@ -10,5 +10,9 @@ import { Component } from '@angular/core';
   `]
 })
 export class ServerComponent {
-
+serverId = 12345;
+status = 'ofline';
+getServerStatus() {
+  return status;
+}
 }
