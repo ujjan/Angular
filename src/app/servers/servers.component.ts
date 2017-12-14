@@ -9,7 +9,9 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 export class ServersComponent implements OnInit {
   createNewServer = false;
   serverCreation = 'No server was created';
-  serverName = '';
+  serverName = 'Test Server';
+  servers =['First Server', 'Second Server'];
+  serverWasCreated = false;
   constructor() {
     setTimeout(() => {
       this.createNewServer = true;
@@ -19,6 +21,8 @@ export class ServersComponent implements OnInit {
   ngOnInit() {
   }
   onServerCreation() {
+    this.serverWasCreated = true;
+    this.servers.push(this.serverName)
     this.serverCreation = 'Server has been created the name is ' + this.serverName;
   }
   onServerUpdate(event: Event) {
